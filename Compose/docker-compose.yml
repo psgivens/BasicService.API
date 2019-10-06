@@ -1,0 +1,79 @@
+version: '3'
+services:
+
+## TODO: Move database to 'platform' project
+
+  # basicservice-pgsql:
+  #   image: basicservice-pgsql
+  #   volumes:
+  #     - basicservice-pgsql-volume:/var/lib/postgresql/data/pgdata
+  #   networks:
+  #     - basicservice-net
+  #   extra_hosts:
+  #     - localmachine:172.31.1.1
+  #   ports:
+  #     - 5432:5432
+  #   environment:
+  #     - POSTGRES_PASSWORD=Password1
+  #     - POSTGRES_USER=samplesam
+  #     - POSTGRES_DB=defaultdb
+  #     - PGDATA=/var/lib/postgresql/data/pgdata
+
+  watch-pomo-rapi:
+    image: basicservice-watch-rapi
+    networks:
+      - basicservice-net
+    extra_hosts:
+      - localmachine:172.31.1.1
+    ports:
+      - 2003:8003
+    volumes:
+      - ${POMODORO_REPOS}/PersonalTracker.Api/BasicService/BasicService.Api/src/:/app/src/
+      - ${POMODORO_REPOS}/PersonalTracker.Api/BasicService/BasicService.Api/wwwroot/:/app/wwwroot/
+      - ${POMODORO_REPOS}/PersonalTracker.Api/BasicService/BasicService.Api/secrets/:/app/secrets/
+
+## TODO: Move idserver to 'platform' project
+
+  # basicservice-idserver:
+  #   image: basicservice-idserver
+  #   networks:
+  #     - basicservice-net
+  #   extra_hosts:
+  #     - localmachine:172.31.1.1
+  #   ports:
+  #     - 2002:80
+  #   volumes:
+  #     - ${POMODORO_REPOS}/PersonalTracker.Api/IdServer/src/:/app/src/
+  #     - ${POMODORO_REPOS}/PersonalTracker.Api/IdServer/secrets/:/app/secrets/
+  #     - ${POMODORO_REPOS}/PersonalTracker.Api/IdServer/config/:/app/config/
+  #   # entrypoint: dotnet ef database update
+  #   # command: ["--debug"]
+    
+## TODO: Customize reverse proxy for this service
+
+  # router-reverse-proxy:
+  #   image: envoyproxy/envoy:latest
+  #   networks:
+  #     - basicservice-net
+  #   extra_hosts:
+  #     - localmachine:172.31.1.1
+  #   ports:
+  #     - 80:2081
+  #   volumes:
+  #     - ${POMODORO_REPOS}/PersonalTracker.Api/envoyproxy/:/etc/envoy/
+
+## TODO: Move utils to 'platform' project
+
+  # utils:
+  #   image: basicservice-utils
+  #   networks:
+  #     - basicservice-net
+  #   extra_hosts:
+  #     - localmachine:172.31.1.1
+  #   entrypoint: /bin/sleep 5h
+
+networks:
+  basicservice-net:
+    external:
+        name: basicservice-net
+

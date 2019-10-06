@@ -1,0 +1,14 @@
+/home/psgivens/Repos/platform/BasicService/BasicService.Api/bin/Debug/netcoreapp2.1/BasicService.Api.deps.json
+/home/psgivens/Repos/platform/BasicService/BasicService.Api/bin/Debug/netcoreapp2.1/BasicService.Api.runtimeconfig.json
+/home/psgivens/Repos/platform/BasicService/BasicService.Api/bin/Debug/netcoreapp2.1/BasicService.Api.runtimeconfig.dev.json
+/home/psgivens/Repos/platform/BasicService/BasicService.Api/bin/Debug/netcoreapp2.1/BasicService.Api.dll
+/home/psgivens/Repos/platform/BasicService/BasicService.Api/bin/Debug/netcoreapp2.1/BasicService.Api.pdb
+/home/psgivens/Repos/platform/BasicService/BasicService.Api/obj/Debug/netcoreapp2.1/BasicService.Api.csprojAssemblyReference.cache
+/home/psgivens/Repos/platform/BasicService/BasicService.Api/obj/Debug/netcoreapp2.1/BasicService.Api.csproj.CoreCompileInputs.cache
+/home/psgivens/Repos/platform/BasicService/BasicService.Api/obj/Debug/netcoreapp2.1/BasicService.Api.RazorAssemblyInfo.cache
+/home/psgivens/Repos/platform/BasicService/BasicService.Api/obj/Debug/netcoreapp2.1/BasicService.Api.RazorAssemblyInfo.cs
+/home/psgivens/Repos/platform/BasicService/BasicService.Api/obj/Debug/netcoreapp2.1/BasicService.Api.AssemblyInfoInputs.cache
+/home/psgivens/Repos/platform/BasicService/BasicService.Api/obj/Debug/netcoreapp2.1/BasicService.Api.AssemblyInfo.cs
+/home/psgivens/Repos/platform/BasicService/BasicService.Api/obj/Debug/netcoreapp2.1/BasicService.Api.RazorTargetAssemblyInfo.cache
+/home/psgivens/Repos/platform/BasicService/BasicService.Api/obj/Debug/netcoreapp2.1/BasicService.Api.dll
+/home/psgivens/Repos/platform/BasicService/BasicService.Api/obj/Debug/netcoreapp2.1/BasicService.Api.pdb

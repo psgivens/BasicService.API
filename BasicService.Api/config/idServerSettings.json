@@ -1,0 +1,6 @@
+{
+  "idServerSettings": {
+    "IssuerUri": "http://basicservice-idserver",
+    "Authority": "http://basicservice-idserver"
+  }
+}
