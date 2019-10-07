@@ -1,1 +1,4 @@
+**/obj
+**/bin
 .ionide
+**/node_modules
