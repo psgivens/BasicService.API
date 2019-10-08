@@ -1,31 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# Overview
-
-## Create project
-To create the template project, use the create-react-app
-
-    npx create-react-app my-app --typescript
-
-Then we need to add our redux, etc. libararies. Merge the following into package.json
-
-    "devDependencies": {
-      "@types/d3": "^5.7.2",
-      "@types/react-redux": "^6.0.14",
-      "@types/react-router-dom": "^4.3.1",
-      "@types/reduce-reducers": "^0.1.3",
-      "redux": "^3.6.0",
-      "redux-saga": "^0.10.5",
-      "node-sass-chokidar": "^1.3.3",
-    },
-
-## Add redux scaffolding
-
-**TODO:** Add instructions for creating redux app as we build this out. 
-
-# Auto-documentation
-This is the documentaiton that is created from the script
-
 ## Available Scripts
 
 In the project directory, you can run:
