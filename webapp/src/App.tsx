@@ -2,7 +2,16 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-const App: React.FC = () => {
+import { connectContainer } from './appComponent/appContainer'
+import * as container from  './appComponent/appContainer'
+
+type ThisProps = 
+  container.StateProps
+  & container.ConnectedDispatch
+  & container.AttributeProps
+
+
+const App: React.FC<ThisProps> = ( props:ThisProps) => {
   return (
     <div className="App">
       <header className="App-header">
@@ -16,11 +25,13 @@ const App: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn Reacts {props.counter!}
         </a>
       </header>
+      button:
+      <button >click me!</button>
     </div>
   );
 }
 
-export default App;
+export default connectContainer(App)
