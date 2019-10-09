@@ -11,6 +11,11 @@ type ThisProps =
   & container.AttributeProps
 
 
+const onButtonPress = (action: ()=>void) => (event: React.SyntheticEvent<HTMLButtonElement>):void => {
+    event.preventDefault()
+    action()
+  }
+
 const App: React.FC<ThisProps> = ( props:ThisProps) => {
   return (
     <div className="App">
@@ -29,7 +34,7 @@ const App: React.FC<ThisProps> = ( props:ThisProps) => {
         </a>
       </header>
       button:
-      <button >click me!</button>
+      <button onClick={onButtonPress(props.incrementCounter!)} >click me!</button>
     </div>
   );
 }

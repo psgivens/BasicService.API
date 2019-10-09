@@ -19,8 +19,6 @@ export type CounterEvent = {
 
 
 /************************ SAGA *********************/
-
-
 export class CounterSaga {
     constructor () {
         this.saga = this.saga.bind(this)
