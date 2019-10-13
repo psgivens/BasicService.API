@@ -1,4 +1,4 @@
-FROM basicservice-dotnet-stage AS build-env
+FROM pomodoro-dotnet-stage AS build-env
 WORKDIR /app
 
 # copy csproj and restore as distinct layers
@@ -10,11 +10,12 @@ COPY . ./
 RUN dotnet publish -c Debug -o out
 
 # build runtime image
-FROM microsoft/dotnet:2.1-aspnetcore-runtime 
+# FROM microsoft/dotnet:2.1-aspnetcore-runtime 
+FROM mcr.microsoft.com/dotnet/core/sdk:2.1
 RUN mkdir /vsdbg
 COPY --from=build-env /vsdbg/ /vsdbg/
 
 WORKDIR /app
-COPY --from=build-env /app/out/ .
-ENTRYPOINT ["dotnet", "BasicService.Api.dll"]
+COPY --from=build-env /app/ .
+ENTRYPOINT ["dotnet", "out/BasicService.Api.dll"]
 

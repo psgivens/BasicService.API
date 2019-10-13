@@ -88,7 +88,8 @@ namespace BasicService.Api
                 => builder
                     .AllowAnyHeader()
                     .AllowAnyMethod()
-                    .WithOrigins("https://localhost,https://localhost:2001,https://localhost:2001"));
+                    .WithOrigins("*"));
+                    // .WithOrigins("https://localhost,https://localhost:2001,https://localhost:2001,http://localhost:3000,http://localhost:2003"));
 
             app.UseMvc();
         }
