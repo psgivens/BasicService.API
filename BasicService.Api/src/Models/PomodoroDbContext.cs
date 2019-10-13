@@ -8,9 +8,6 @@ namespace BasicService.Api.Models
     {
         public BasicServiceDbContext(DbContextOptions<BasicServiceDbContext> options)
             : base(options) { }
-        public virtual DbSet<BasicServiceEntryModel> BasicServiceEntries { get; set; }
-        public virtual DbSet<PersonEntity> People { get; set; }
-        public virtual DbSet<GroupEntity> Groups { get; set; }
         public virtual DbSet<ActionItemModel> ActionItems { get; set; }
     }
 }

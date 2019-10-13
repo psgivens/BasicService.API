@@ -17,3 +17,11 @@ Basic service which demonstrates domain agnostic capabilities such as authentica
 ## Creating the react/redux app
 
 See SPAFROMSCRATCH.md
+
+
+# Blockers
+
+**Authentication/Authorization**
+Check this out
+* https://stackoverflow.com/questions/31464359/how-do-you-create-a-custom-authorizeattribute-in-asp-net-core
+* https://docs.microsoft.com/en-us/aspnet/core/security/authorization/policies?view=aspnetcore-3.0

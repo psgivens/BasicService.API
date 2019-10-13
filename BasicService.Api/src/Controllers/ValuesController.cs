@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace BasicService.Api.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize]
     public class ValuesController : Controller
     {
         // GET api/values
