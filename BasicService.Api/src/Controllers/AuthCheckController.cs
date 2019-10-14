@@ -9,36 +9,20 @@ namespace BasicService.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AuthCheckController : ControllerBase
+    public class AuthCheckController : MicroServiceControllerBase
     {
         public AuthCheckController(){
             TlsHack.Hack();
         }
 
-        private bool IsAuthorized() {
-            var headers = this.Request.Headers;            
-            var userIdString = headers["user_id"];
-            var transactionIdString = headers["transaction_id"];
-            Guid userId, transactionId;
-
-            Console.WriteLine($"User Id: {userIdString}");
-            Console.WriteLine($"Transaction Id: {transactionIdString}");
-            if (string.IsNullOrWhiteSpace(userIdString) 
-                || string.IsNullOrWhiteSpace(transactionIdString) 
-                || !Guid.TryParse(userIdString, out userId)
-                || !Guid.TryParse(transactionIdString, out transactionId)
-                ){
-                return false;
-            }
-            return true;
-        }
         
         // GET api/ping
         [HttpGet]
+        [MyErrorHandler]
         public ActionResult<IEnumerable<string>> Get()
         {
             if (!IsAuthorized()) return Unauthorized();
-            return "Success from AuthCheck Controller!!!".Split(" ");            
+            return $"Success from AuthCheck Controller for user {this.UserId}!!!".Split(" ");            
         }
 
         // GET api/ping/5
