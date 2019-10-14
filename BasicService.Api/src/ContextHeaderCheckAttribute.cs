@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace BasicService.Api.Controllers
 {
-    class MyErrorHandler : ActionFilterAttribute
+    class ContextHeaderCheckAttribute : ActionFilterAttribute
     {
         public override void OnActionExecuting(ActionExecutingContext context)
         {
@@ -21,7 +21,6 @@ namespace BasicService.Api.Controllers
                 || !Guid.TryParse(transactionIdString, out transactionId)
                 )
             {
-                Console.WriteLine ("Unauthorized from MyErrorHandler");
                 context.Result = new UnauthorizedResult ();
             }
             else

@@ -8,7 +8,7 @@ namespace BasicService.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PingDtoController : ControllerBase
+    public class PingDtoController : MicroServiceControllerBase
     {
         // GET api/ping
         [HttpGet]

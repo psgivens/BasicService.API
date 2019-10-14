@@ -1,26 +1,36 @@
 version: '3'
 services:
 
+
+
+  pomodoro-pgsql:
+    image: pomodoro-pgsql
+    volumes:
+      - basicservice-pgsql-volume:/var/lib/postgresql/data/pgdata
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=Password1
+      - POSTGRES_USER=samplesam
+      - POSTGRES_DB=defaultdb
+      - PGDATA=/var/lib/postgresql/data/pgdata
+
 # TODO: Change image to local image
 
-  watch-pomo-rapi:
-    image: basicservice-watch-rapi
-    # networks:
-    #   - external:
-    #       name: basicservice-net
-      # - basicservice-net
+
+  basicservice-api:
+    image: basicservice-api
     extra_hosts:
       - localmachine:172.31.1.1
     volumes:
-      - ${POMODORO_REPOS}/PersonalTracker.Api/BasicService/BasicService.Api/src/:/app/src/
-      - ${POMODORO_REPOS}/PersonalTracker.Api/BasicService/BasicService.Api/wwwroot/:/app/wwwroot/
-      - ${POMODORO_REPOS}/PersonalTracker.Api/BasicService/BasicService.Api/secrets/:/app/secrets/
-      - ${POMODORO_REPOS}/PersonalTracker.Api/BasicService/BasicService.Api/Migrations/:/app/Migrations/
-      # - ${POMODORO_REPOS}/PersonalTracker.Api/Mountebank/api_conf/:/app/config/
+      - ${PLATFORM_REPOS}/BasicService.API/BasicService.Api/src/:/app/src/
+      - ${PLATFORM_REPOS}/BasicService.API/BasicService.Api/wwwroot/:/app/wwwroot/
+      - ${PLATFORM_REPOS}/BasicService.API/BasicService.Api/secrets/:/app/secrets/
+      - ${PLATFORM_REPOS}/BasicService.API/BasicService.Api/Migrations/:/app/Migrations/
     entrypoint: dotnet ef database update
 
-# volumes:
-#   basicservice-pgsql-volume:  
+volumes:
+  basicservice-pgsql-volume:  
 
 ## Move network to 'platform' project
 ## TODO Add external link
@@ -28,4 +38,4 @@ services:
 networks:
   default:
     external:
-        name: basicservice-net
+        name: pomodoro-net

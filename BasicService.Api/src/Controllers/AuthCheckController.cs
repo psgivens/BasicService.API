@@ -9,6 +9,7 @@ namespace BasicService.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [ContextHeaderCheck]
     public class AuthCheckController : MicroServiceControllerBase
     {
         public AuthCheckController(){
@@ -18,10 +19,8 @@ namespace BasicService.Api.Controllers
         
         // GET api/ping
         [HttpGet]
-        [MyErrorHandler]
         public ActionResult<IEnumerable<string>> Get()
         {
-            if (!IsAuthorized()) return Unauthorized();
             return $"Success from AuthCheck Controller for user {this.UserId}!!!".Split(" ");            
         }
 

@@ -9,7 +9,7 @@ namespace BasicService.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PingController : ControllerBase
+    public class PingController : MicroServiceControllerBase
     {
         public PingController(){
             TlsHack.Hack();

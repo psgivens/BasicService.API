@@ -10,7 +10,7 @@ namespace BasicService.Api.Controllers
 {
     [Route("api/[controller]")]
 
-    public class ActionItemsController : ControllerBase
+    public class ActionItemsController : MicroServiceControllerBase
     {
         private readonly BasicServiceDbContext _context;
 
