@@ -38,5 +38,5 @@ Invoke-RestMethod `
 
 # Gets values from a database
 Invoke-RestMethod `
-    -Uri "$domain/api/actionitem" 
+    -Uri "$domain/api/actionitems" 
 
