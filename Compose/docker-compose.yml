@@ -3,21 +3,18 @@ services:
 
 ## TODO: Move database to 'platform' project
 
-  # pomodoro-pgsql:
-  #   image: pomodoro-pgsql
-  #   volumes:
-  #     - pomodoro-pgsql-volume:/var/lib/postgresql/data/pgdata
-  #   networks:
-  #     - pomodoro-net
-  #   extra_hosts:
-  #     - localmachine:172.31.1.1
-  #   ports:
-  #     - 5432:5432
-  #   environment:
-  #     - POSTGRES_PASSWORD=Password1
-  #     - POSTGRES_USER=samplesam
-  #     - POSTGRES_DB=defaultdb
-  #     - PGDATA=/var/lib/postgresql/data/pgdata
+  pomodoro-pgsql:
+    image: pomodoro-pgsql
+    volumes:
+      - basicservice-pgsql-volume:/var/lib/postgresql/data/pgdata
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=Password1
+      - POSTGRES_USER=samplesam
+      - POSTGRES_DB=defaultdb
+      - PGDATA=/var/lib/postgresql/data/pgdata
+
 
   basicservice-api:
     build: ../BasicService.Api
@@ -93,6 +90,10 @@ services:
   #   extra_hosts:
   #     - localmachine:172.31.1.1
   #   entrypoint: /bin/sleep 5h
+
+
+volumes:
+  basicservice-pgsql-volume:  
 
 networks:
   pomodoro-net:
