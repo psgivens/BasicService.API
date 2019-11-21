@@ -22,8 +22,9 @@ catch
 {
     $StatusCode = $_.Exception.Response.StatusCode.value__
 }
-if ($StatusCode -ne 401) { throw "authcheck should have returned 401 without headers"}
-
+if ($StatusCode -ne 401) { throw "authcheck should have returned 401 without headers"
+} else { 
+Write-Host "Call returned 401 as expected" }
 
 # Succeed with headers
 Invoke-RestMethod `
@@ -39,4 +40,12 @@ Invoke-RestMethod `
 # Gets values from a database
 Invoke-RestMethod `
     -Uri "$domain/api/actionitems" 
+# Problems? Try these:
+# * Verify that the database container is running
+# * Verify that the database is on the expected network (docker network)
+# * Verify that the connection string is correct
+# * Verify that the service is pulling the correct configuration files
+
+
+
 

@@ -7,6 +7,10 @@ services:
     image: pomodoro-pgsql
     volumes:
       - basicservice-pgsql-volume:/var/lib/postgresql/data/pgdata
+    networks:
+      - pomodoro-net
+    extra_hosts:
+      - localmachine:172.31.1.1
     ports:
       - 5432:5432
     environment:

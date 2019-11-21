@@ -1,9 +1,21 @@
 # BasicService
 Basic service which demonstrates domain agnostic capabilities such as authentication, db connection, and the like. 
 
-
+These services are designed to run in
+* docker-compose for local development/testing
+* microk8s (kubernetes) for local integration testing
+* Azure/AWS Kubernetes for production
 
 # Overview
+
+### docker compose
+Change into the "Compose" directory to use docker compose.
+
+* Use `docker-compose -f ./docker-compose-dbinit.yml up` to configure necessary files for the database.
+* Use `docker-compose up` to run the application, which is now available on **port 2003**
+
+You can read and execute the ./scripts/run.ps1 to get familiar with the capabilities of this basic service.
+
 
 ## Work arounds
 
