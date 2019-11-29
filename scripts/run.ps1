@@ -2,6 +2,8 @@
 
 $domain = "http://localhost:2003"
 
+$domain = "http://localhost:8003"
+
 Invoke-RestMethod `
     -Uri "$domain/api/ping"
  
@@ -40,6 +42,7 @@ Invoke-RestMethod `
 # Gets values from a database
 Invoke-RestMethod `
     -Uri "$domain/api/actionitems" 
+
 # Problems? Try these:
 # * Verify that the database container is running
 # * Verify that the database is on the expected network (docker network)

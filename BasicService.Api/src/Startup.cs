@@ -44,19 +44,19 @@ namespace BasicService.Api
             services.AddSingleton<IConfiguration>(Configuration);
 
             // Microsoft.IdentityModel.Logging.IdentityModelEventSource.ShowPII = true; //To show detail of error and see the problem
-            services.AddIdentityServer(opt => opt.IssuerUri = issuerUri);
+            // services.AddIdentityServer(opt => opt.IssuerUri = issuerUri);
 
-            services.AddAuthentication(opt =>
-                {
-                    opt.DefaultScheme = IdentityServerAuthenticationDefaults.AuthenticationScheme;
-                    opt.DefaultAuthenticateScheme = IdentityServerAuthenticationDefaults.AuthenticationScheme;
-                })
-                .AddIdentityServerAuthentication(opt =>
-                {
-                    opt.Authority = idServerAuthority;
-                    opt.RequireHttpsMetadata = false;
-                    opt.ApiName = "api1";
-                });
+            // services.AddAuthentication(opt =>
+            //     {
+            //         opt.DefaultScheme = IdentityServerAuthenticationDefaults.AuthenticationScheme;
+            //         opt.DefaultAuthenticateScheme = IdentityServerAuthenticationDefaults.AuthenticationScheme;
+            //     })
+            //     .AddIdentityServerAuthentication(opt =>
+            //     {
+            //         opt.Authority = idServerAuthority;
+            //         opt.RequireHttpsMetadata = false;
+            //         opt.ApiName = "api1";
+            //     });
 
             services.AddCors();
 
