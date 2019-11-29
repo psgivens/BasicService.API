@@ -1,0 +1,5 @@
+{
+  "context": "BasicService.API/BasicService.Api/",
+  "dockerfile": "watch.Dockerfile",
+  "imagesuffix": "api-service"
+}

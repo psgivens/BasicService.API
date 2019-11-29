@@ -1,4 +1,4 @@
-FROM basicservice-dotnet-stage AS build-env
+FROM dotnet-stage AS build-env
 WORKDIR /app
 
 # copy csproj and restore as distinct layers
