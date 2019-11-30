@@ -6,6 +6,17 @@ These services are designed to run in
 * microk8s (kubernetes) for local integration testing
 * Azure/AWS Kubernetes for production
 
+# Before you begin
+
+Visit the Architecture project at $BESPIN_REPOS/Architecture for scripts and documentation.
+
+| Path                              | Description                                   |
+| --------------------------------- | --------------------------------------------- |
+| scripts                           | powershell scripts for running services       | 
+| docs                              | all documents                                 | 
+| docs/microservices                | documentation about microservices             |
+| docs/inventory/progress.md        | Capability status of microservices            |
+
 # Overview
 
 ### docker compose
