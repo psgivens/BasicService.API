@@ -31,7 +31,6 @@ services:
     - dotnet
     - watch
     - run
-
     networks:
       - pomodoro-net
     extra_hosts:
@@ -42,6 +41,7 @@ services:
       - ${PLATFORM_REPOS}/BasicService.API/BasicService.Api/src/:/app/src/
       - ${PLATFORM_REPOS}/BasicService.API/BasicService.Api/wwwroot/:/app/wwwroot/
       - ${PLATFORM_REPOS}/BasicService.API/BasicService.Api/secrets/:/app/secrets/
+      - ${PLATFORM_REPOS}/BasicService.API/BasicService.Api/configMounts/compose/:/app/config/
 
 
   # basicservice-api:

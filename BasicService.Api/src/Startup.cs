@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.IO;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -62,7 +63,8 @@ namespace BasicService.Api
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            var connectionString = Configuration["BasicServiceDbContextSettings:ConnectionString"];
+            var connectionStringFile = "config/BasicServiceDbContext.connectionstring";
+            var connectionString = File.ReadAllText(connectionStringFile);
             services.AddDbContext<BasicServiceDbContext>(
                 opts => opts.UseNpgsql(connectionString)
             );
