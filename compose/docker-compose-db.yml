@@ -1,0 +1,26 @@
+version: '3'
+services:
+
+  pomodoro-pgsql:
+    image: postgres:alpine
+    # image: pomodoro-pgsql
+    volumes:
+      - basicservice-pgsql-volume:/var/lib/postgresql/data/pgdata
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=Password1
+      - POSTGRES_USER=samplesam
+      - POSTGRES_DB=defaultdb
+      - PGDATA=/var/lib/postgresql/data/pgdata
+
+volumes:
+  basicservice-pgsql-volume:  
+
+## Move network to 'platform' project
+## TODO Add external link
+
+networks:
+  default:
+    external:
+        name: pomodoro-net

@@ -1,5 +1,6 @@
 {
   "context": "BasicService.API/BasicService.Api/",
   "dockerfile": "watch.Dockerfile",
-  "imagesuffix": "api-service"
+  "imagesuffix": "api-service",
+  "dbcontainer": "pomodoro-pgsql"
 }

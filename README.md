@@ -20,6 +20,13 @@ Visit the Architecture project at $BESPIN_REPOS/Architecture for scripts and doc
 # Overview
 
 ### docker compose
+
+// TODO: Add reference to central documentation. 
+Prerequisites: Create docker network
+
+    docker network create pomodoro-net
+
+
 Change into the "Compose" directory to use docker compose.
 
 * Use `docker-compose -f ./docker-compose-dbinit.yml up` to configure necessary files for the database.

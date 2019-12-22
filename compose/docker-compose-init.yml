@@ -4,7 +4,8 @@ services:
 
 
   pomodoro-pgsql:
-    image: pomodoro-pgsql
+    image: postgres:alpine
+    # image: pomodoro-pgsql
     volumes:
       - basicservice-pgsql-volume:/var/lib/postgresql/data/pgdata
     ports:
@@ -19,7 +20,8 @@ services:
 
 
   basicservice-api:
-    image: basicservice-api
+    # image: basicservice-api
+    image: basicservice.api-api-service
     extra_hosts:
       - localmachine:172.31.1.1
     volumes:
