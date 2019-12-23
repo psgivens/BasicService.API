@@ -3,7 +3,6 @@ services:
 
   pomodoro-pgsql:
     image: postgres:alpine
-    # image: pomodoro-pgsql
     volumes:
       - basicservice-pgsql-volume:/var/lib/postgresql/data/pgdata
     ports:

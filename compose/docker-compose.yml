@@ -4,7 +4,6 @@ services:
 ## TODO: Move database to 'platform' project
 
   pomodoro-pgsql:
-    # image: pomodoro-pgsql
     image: postgres:alpine
     volumes:
       - basicservice-pgsql-volume:/var/lib/postgresql/data/pgdata
@@ -23,7 +22,6 @@ services:
 
   basicservice-api:
     build: ../BasicService.Api
-    # image: basicservice-api
     image: basicservice.api-api-service
     entrypoint:
     # - ls
