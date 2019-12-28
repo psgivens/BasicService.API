@@ -19,7 +19,7 @@ volumes:
 ## Move network to 'platform' project
 ## TODO Add external link
 
-networks:
-  default:
-    external:
-        name: pomodoro-net
+# networks:
+#   default:
+#     external:
+#         name: pomodoro-net

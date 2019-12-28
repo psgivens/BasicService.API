@@ -9,8 +9,6 @@ services:
       - basicservice-pgsql-volume:/var/lib/postgresql/data/pgdata
     networks:
       - pomodoro-net      
-    ports:
-      - 5432:5432
     environment:
       - POSTGRES_PASSWORD=Password1
       - POSTGRES_USER=samplesam
